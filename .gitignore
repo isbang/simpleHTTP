@@ -1,0 +1,5 @@
+# ignore goland directory
+.idea
+
+# ignore test file
+*.out
