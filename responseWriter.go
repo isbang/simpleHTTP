@@ -28,6 +28,18 @@ type responseWriter struct {
 	err    error
 }
 
+func (w *responseWriter) Header() http.Header {
+	return w.w.Header()
+}
+
+func (w *responseWriter) Write(p []byte) (int, error) {
+	return w.w.Write(p)
+}
+
+func (w *responseWriter) WriteHeader(statusCode int) {
+	w.w.WriteHeader(statusCode)
+}
+
 func (w *responseWriter) SetStatus(status int) {
 	w.status = status
 }
