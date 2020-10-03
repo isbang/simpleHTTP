@@ -93,8 +93,8 @@ func WithDeadline(ctx Context, t time.Time) (Context, CancelFunc) {
 }
 
 type simpleContext struct {
-	*requestReader
-	*responseWriter
+	requestReader
+	responseWriter
 
 	abort    bool
 	chain    []HandlerFunc
